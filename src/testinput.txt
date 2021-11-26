@@ -1,0 +1,18 @@
+main ()
+{
+ /**ovo je komentar*/
+ int pr1;
+ boolean k2:=false;
+ int b20;
+ real mr0:=1.314E+2;
+ pr1:=10#125;
+ b20:=4;
+ if(pr1>b20):{
+ b20:=3;
+ int c77:=8#17;
+ }
+ elif(pr1<b20):
+ {int d02:=2#00111;
+  int f1:=#12AF;}
+ else: int e3:=16#ABC;
+}
