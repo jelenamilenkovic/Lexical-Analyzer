@@ -57,7 +57,13 @@ niz_cifara_2=([0-1]*)
 , { return new Yytoken( sym.COMMA, yytext(), yyline, yycolumn ); }
 \. { return new Yytoken( sym.DOT, yytext(), yyline, yycolumn ); }
 := { return new Yytoken( sym.ASSIGN, yytext(), yyline, yycolumn ); }
-
+//rel op
+> { return new Yytoken( sym.GREATER,yytext(), yyline, yycolumn ); }
+\< { return new Yytoken( sym.LESS,yytext(), yyline, yycolumn ); }
+== { return new Yytoken( sym.EQUAL,yytext(), yyline, yycolumn ); }
+>= { return new Yytoken( sym.GREATEREQ,yytext(), yyline, yycolumn ); }
+\<= { return new Yytoken( sym.LESSEQ,yytext(), yyline, yycolumn ); }
+\<> { return new Yytoken ( sym.NOTEQ, yytext(), yyline, yycolumn); }
 //boolean
 (true|false) { return new Yytoken( sym.CONST, yytext(), yyline, yycolumn ); }
 
@@ -81,8 +87,6 @@ niz_cifara_2=([0-1]*)
 //real
 {niz_cifara_10}\.{niz_cifara_10}(E[+-]?{niz_cifara_10})? { return new Yytoken( sym.CONST, yytext(), yyline, yycolumn ); }
 
-//relop
-(<|<=|==|<>|>|>=) { return new Yytoken( sym.RelOp,yytext(), yyline, yycolumn ); }
 
 //obrada gresaka
 . { if (yytext() != null && yytext().length() > 0) System.out.println( "ERROR: " + yytext() ); }
